@@ -1,3 +1,10 @@
+# manually-added files
+# py conda env
+conda-env/
+# renv lint, going with minimal committed files, see https://rstudio.github.io/renv/articles/collaborating.html
+renv/
+.Rprofile
+
 # Created by https://www.toptal.com/developers/gitignore/api/r,python,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=r,python,macos
 
@@ -262,3 +269,5 @@ rsconnect/
 /*_files/
 
 # End of https://www.toptal.com/developers/gitignore/api/r,python,macos
+
+/.quarto/
