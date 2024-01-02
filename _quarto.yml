@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: _output
+  render:
+    - "*.qmd"
+    - "!/./labs-env/"
+execute:
+  freeze: auto
+website:
+  favicon: /./www/favicon.ico
+  # site-url: ""
+  description: "Exploring Palmer Penguins"
+  search: false
+  # title: ""
+format:
+  html:
+    include-in-header:
+      - text: |
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6658778373981809" crossorigin="anonymous"></script>
+    theme: vapor
+    css: /www/styles.css
+    toc: true
+    number-sections: true
