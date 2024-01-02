@@ -8,10 +8,10 @@ execute:
   freeze: auto
 website:
   favicon: /./www/favicon.ico
-  # site-url: ""
-  description: "Exploring Palmer Penguins"
+  site-url: "https://r-leyshon.github.io/do4ds-labs/"
+  description: "Site created during workthrough of DevOps for Data Science Labs"
   search: false
-  # title: ""
+  title: "Exploring Palmer Penguins"
 format:
   html:
     include-in-header:
