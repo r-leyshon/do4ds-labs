@@ -1,0 +1,24 @@
+---
+title: "Exploring Palmer Penguins"
+author: "Rich Leyshon"
+date: today
+resources:
+  - .nojekyll
+listing:
+    id: main-listing
+    type: default
+    contents:
+        - /./*.qmd
+    sort:
+        - "title desc"
+    sort-ui: [title]
+    filter-ui: true
+    categories: false
+    date-format: medium
+    max-items: 5
+    image-placeholder: https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png # creative commons license - https://github.com/allisonhorst/palmerpenguins/blob/main/LICENSE.md
+    fields: [image, date, title, author, reading-time, description, categories]
+---
+
+::: {#main-listing}
+:::
