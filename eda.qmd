@@ -33,8 +33,18 @@ df %>%
 
 
 ```{r}
+df = df %>%
+  mutate(colour = case_when(
+    (species == "Adelie") ~ "#ff7400",
+    (species == "Chinstrap") ~ "#c35ccc",
+    (species == "Gentoo") ~ "#057275",
+    TRUE ~ "",
+  ))
+
 df %>%
-  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +
+  ggplot(aes(x = bill_length_mm, y = body_mass_g, colour=colour)) +
   geom_point() + 
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") +
+  scale_color_manual(values = levels(factor(df$colour, levels=c("#ff7400", "#c35ccc", "#057275"))), 
+                   labels = c("Adelie","Chinstrap","Gentoo"))
 ```
