@@ -17,7 +17,7 @@ from pandas import get_dummies
 # import numpy as np
 from sklearn.linear_model import LinearRegression
 # from sklearn import preprocessing
-from vetiver import VetiverModel, vetiver_pin_write
+from vetiver import VetiverModel, vetiver_pin_write, VetiverAPI
 from pins import board_folder
 
 ```
@@ -35,7 +35,7 @@ df.head(3)
 
 
 ```{python}
-X = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)
+X = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = False)
 y = df['body_mass_g']
 
 model = LinearRegression().fit(X, y)
@@ -52,11 +52,22 @@ print(f"Coefficients {model.coef_}")
 ```
 
 ```{python}
-#| echo: false
 # save the model
 v = VetiverModel(model, model_name='penguin_model', prototype_data=X)
-# create a board with pins
+# # create a board with pins
 model_board = board_folder(path="data/model", versioned=True, allow_pickle_read=True)
 vetiver_pin_write(model_board, v)
+
+```
+
+## Create API
+
+```{python}
+b = board_folder('data/model', allow_pickle_read=True)
+v = VetiverModel.from_pin(b, 'penguin_model')
+app = VetiverAPI(v, check_prototype=True)
+
+# app.run(port=8080)
+# may need to kill the server process eg kill 34246
 
 ```
