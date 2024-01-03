@@ -46,6 +46,8 @@ df %>%
   ggplot(aes(x = bill_length_mm, y = body_mass_g, colour=colour)) +
   geom_point() + 
   geom_smooth(method = "lm") +
-  scale_color_manual(values = levels(factor(df$colour, levels=c("#ff7400", "#c35ccc", "#057275"))), 
-                   labels = c("Adelie","Chinstrap","Gentoo"))
+  scale_color_manual(
+    values = levels(factor(df$colour, levels=c("#ff7400", "#c35ccc", "#057275"))), 
+    labels = c("Adelie","Chinstrap","Gentoo")) +
+  theme_bw()
 ```
