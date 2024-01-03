@@ -53,7 +53,7 @@
     "href": "eda.html#penguin-size-vs-mass-by-species",
     "title": "Penguins EDA",
     "section": "2 Penguin Size vs Mass by Species",
-    "text": "2 Penguin Size vs Mass by Species\n\n\nCode\ndf = df %&gt;%\n  mutate(colour = case_when(\n    (species == \"Adelie\") ~ \"#ff7400\",\n    (species == \"Chinstrap\") ~ \"#c35ccc\",\n    (species == \"Gentoo\") ~ \"#057275\",\n    TRUE ~ \"\",\n  ))\n\ndf %&gt;%\n  ggplot(aes(x = bill_length_mm, y = body_mass_g, colour=colour)) +\n  geom_point() + \n  geom_smooth(method = \"lm\") +\n  scale_color_manual(values = levels(factor(df$colour, levels=c(\"#ff7400\", \"#c35ccc\", \"#057275\"))), \n                   labels = c(\"Adelie\",\"Chinstrap\",\"Gentoo\")) +\n                   theme_bw()"
+    "text": "2 Penguin Size vs Mass by Species\n\n\nCode\ndf = df %&gt;%\n  mutate(colour = case_when(\n    (species == \"Adelie\") ~ \"#ff7400\",\n    (species == \"Chinstrap\") ~ \"#c35ccc\",\n    (species == \"Gentoo\") ~ \"#057275\",\n    TRUE ~ \"\",\n  ))\n\ndf %&gt;%\n  ggplot(aes(x = bill_length_mm, y = body_mass_g, colour=colour)) +\n  geom_point() + \n  geom_smooth(method = \"lm\") +\n  scale_color_manual(\n    values = levels(factor(df$colour, levels=c(\"#ff7400\", \"#c35ccc\", \"#057275\"))), \n    labels = c(\"Adelie\",\"Chinstrap\",\"Gentoo\")) +\n  theme_bw()"
   },
   {
     "objectID": "index.html",
