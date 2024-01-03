@@ -3,7 +3,7 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
-    - "!/./labs-env/"
+    - "!/./conda-env/"
 execute:
   freeze: auto
 website:

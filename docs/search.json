@@ -4,7 +4,7 @@
     "href": "model.html",
     "title": "Model",
     "section": "",
-    "text": "Code\nfrom palmerpenguins import penguins\nfrom pandas import get_dummies\n# import numpy as np\nfrom sklearn.linear_model import LinearRegression\n# from sklearn import preprocessing"
+    "text": "Code\nfrom palmerpenguins import penguins\nfrom pandas import get_dummies\n# import numpy as np\nfrom sklearn.linear_model import LinearRegression\n# from sklearn import preprocessing\nfrom vetiver import VetiverModel, vetiver_pin_write\nfrom pins import board_folder"
   },
   {
     "objectID": "model.html#get-data",
@@ -25,7 +25,7 @@
     "href": "model.html#get-some-information",
     "title": "Model",
     "section": "3 Get some information",
-    "text": "3 Get some information\n\n\nCode\nprint(f\"R^2 {model.score(X,y)}\")\nprint(f\"Intercept {model.intercept_}\")\nprint(f\"Columns {X.columns}\")\nprint(f\"Coefficients {model.coef_}\")\n\n\nR^2 0.8555368759537614\nIntercept 2169.269720939399\nColumns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_male'], dtype='object')\nCoefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]"
+    "text": "3 Get some information\n\n\nCode\nprint(f\"R^2 {model.score(X,y)}\")\nprint(f\"Intercept {model.intercept_}\")\nprint(f\"Columns {X.columns}\")\nprint(f\"Coefficients {model.coef_}\")\n\n\nR^2 0.8555368759537614\nIntercept 2169.269720939399\nColumns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_male'], dtype='object')\nCoefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]\n\n\n\n\nModel Cards provide a framework for transparent, responsible reporting. \n Use the vetiver `.qmd` Quarto template as a place to start, \n with vetiver.model_card()\nWriting pin:\nName: 'penguin_model'\nVersion: 20240103T082802Z-73a81"
   },
   {
     "objectID": "eda.html",
