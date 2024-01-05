@@ -1,4 +1,4 @@
-name: /Users/richardleyshon/Documents/do4ds-labs/conda-env
+name: ./conda-env
 channels:
   - defaults
 dependencies:
@@ -157,4 +157,4 @@ dependencies:
       - scipy==1.11.4
       - threadpoolctl==3.2.0
       - tzdata==2023.4
-prefix: /Users/richardleyshon/Documents/do4ds-labs/conda-env
+prefix: ./conda-env
