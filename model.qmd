@@ -79,8 +79,8 @@ print(f"Coefficients {model.coef_}")
 ```{python}
 #| eval: false
 # run this stage in CLI
-b = board_folder('data/model', allow_pickle_read=True)
-v = VetiverModel.from_pin(b, 'penguin_model')
+b = board_folder("data/model", allow_pickle_read=True)
+v = VetiverModel.from_pin(b, "penguin_model")
 app = VetiverAPI(v, check_prototype=True)
 
 app.run(port=8080)
@@ -104,6 +104,6 @@ req = requests.post(
   "http://127.0.0.1:8080/predict", json=req_data,
   headers={"Content-Type": "application/json"},
 )
-res = req.json().get('predict')[0]
+res = req.json().get("predict")[0]
 print(f"For bill length {pred_X}, body mass {res} is predicted.")
 ```
