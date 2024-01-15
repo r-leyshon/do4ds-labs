@@ -20,6 +20,7 @@ from sklearn.linear_model import LinearRegression
 from vetiver import VetiverModel, vetiver_pin_write, VetiverAPI
 from pins import board_folder
 import duckdb
+import requests
 
 ```
 
@@ -63,22 +64,46 @@ print(f"Coefficients {model.coef_}")
 ```
 
 ```{python}
+#| echo: false
+#| eval: false
 # save the model
-v = VetiverModel(model, model_name='penguin_model', prototype_data=X)
+# v = VetiverModel(model, model_name='penguin_model', prototype_data=X)
 # # create a board with pins
-model_board = board_folder(path="data/model", versioned=True, allow_pickle_read=True)
-vetiver_pin_write(model_board, v)
+# model_board = board_folder(path="data/model", versioned=True, allow_pickle_read=True)
+# vetiver_pin_write(model_board, v)
 
 ```
 
 ## Create API
 
 ```{python}
+#| eval: false
+# run this stage in CLI
 b = board_folder('data/model', allow_pickle_read=True)
 v = VetiverModel.from_pin(b, 'penguin_model')
 app = VetiverAPI(v, check_prototype=True)
 
-# app.run(port=8080)
-# may need to kill the server process eg kill 34246
+app.run(port=8080)
+# may need to kill the server process eg kill 34246 when done
 
+```
+
+## Query API
+
+```{python}
+#| eval: false
+# once app is running, execute cell
+pred_X = 20
+req_data = [{
+  "bill_length_mm": pred_X,
+  "species_Chinstrap": False,
+  "species_Gentoo": False,
+  "sex_male": False
+}]
+req = requests.post(
+  "http://127.0.0.1:8080/predict", json=req_data,
+  headers={"Content-Type": "application/json"},
+)
+res = req.json().get('predict')[0]
+print(f"For bill length {pred_X}, body mass {res} is predicted.")
 ```
