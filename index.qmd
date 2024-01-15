@@ -17,7 +17,7 @@ listing:
     date-format: medium
     max-items: 5
     image-placeholder: https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png # creative commons license - https://github.com/allisonhorst/palmerpenguins/blob/main/LICENSE.md
-    fields: [image, date, title, author, reading-time, description, categories]
+    fields: [image, date, title, author, reading-time, categories]
 ---
 
 ::: {#main-listing}
