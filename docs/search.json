@@ -32,14 +32,14 @@
     "href": "model.html#create-api",
     "title": "Model",
     "section": "4 Create API",
-    "text": "4 Create API\n\n\nCode\n# run this stage in CLI\nb = board_folder('data/model', allow_pickle_read=True)\nv = VetiverModel.from_pin(b, 'penguin_model')\napp = VetiverAPI(v, check_prototype=True)\n\napp.run(port=8080)\n# may need to kill the server process eg kill 34246 when done"
+    "text": "4 Create API\n\n\nCode\n# run this stage in CLI\nb = board_folder(\"data/model\", allow_pickle_read=True)\nv = VetiverModel.from_pin(b, \"penguin_model\")\napp = VetiverAPI(v, check_prototype=True)\n\napp.run(port=8080)\n# may need to kill the server process eg kill 34246 when done"
   },
   {
     "objectID": "model.html#query-api",
     "href": "model.html#query-api",
     "title": "Model",
     "section": "5 Query API",
-    "text": "5 Query API\n\n\nCode\n# once app is running, execute cell\npred_X = 20\nreq_data = [{\n  \"bill_length_mm\": pred_X,\n  \"species_Chinstrap\": False,\n  \"species_Gentoo\": False,\n  \"sex_male\": False\n}]\nreq = requests.post(\n  \"http://127.0.0.1:8080/predict\", json=req_data,\n  headers={\"Content-Type\": \"application/json\"},\n)\nres = req.json().get('predict')[0]\nprint(f\"For bill length {pred_X}, body mass {res} is predicted.\")"
+    "text": "5 Query API\n\n\nCode\n# once app is running, execute cell\npred_X = 20\nreq_data = [{\n  \"bill_length_mm\": pred_X,\n  \"species_Chinstrap\": False,\n  \"species_Gentoo\": False,\n  \"sex_male\": False\n}]\nreq = requests.post(\n  \"http://127.0.0.1:8080/predict\", json=req_data,\n  headers={\"Content-Type\": \"application/json\"},\n)\nres = req.json().get(\"predict\")[0]\nprint(f\"For bill length {pred_X}, body mass {res} is predicted.\")"
   },
   {
     "objectID": "eda.html",
