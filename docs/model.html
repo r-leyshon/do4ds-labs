@@ -84,9 +84,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6658778373981809" crossorigin="anonymous"></script>
 
 
@@ -134,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="cell" data-execution_count="1">
+<div id="073324c5" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> penguins</span>
@@ -143,80 +140,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># from sklearn import preprocessing</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vetiver <span class="im">import</span> VetiverModel, vetiver_pin_write, VetiverAPI</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pins <span class="im">import</span> board_folder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pins <span class="im">import</span> board_folder</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> duckdb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="get-data" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="get-data"><span class="header-section-number">1</span> Get Data</h2>
-<div class="cell" data-execution_count="2">
+<div id="1377c712" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> penguins.load_penguins().dropna()</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> duckdb.<span class="ex">connect</span>(<span class="st">"my-db.duckdb"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> con.execute(<span class="st">"SELECT * FROM penguins"</span>).fetchdf().dropna()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>con.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">species</th>
-<th data-quarto-table-cell-role="th">island</th>
-<th data-quarto-table-cell-role="th">bill_length_mm</th>
-<th data-quarto-table-cell-role="th">bill_depth_mm</th>
-<th data-quarto-table-cell-role="th">flipper_length_mm</th>
-<th data-quarto-table-cell-role="th">body_mass_g</th>
-<th data-quarto-table-cell-role="th">sex</th>
-<th data-quarto-table-cell-role="th">year</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Adelie</td>
-<td>Torgersen</td>
-<td>39.1</td>
-<td>18.7</td>
-<td>181.0</td>
-<td>3750.0</td>
-<td>male</td>
-<td>2007</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Adelie</td>
-<td>Torgersen</td>
-<td>39.5</td>
-<td>17.4</td>
-<td>186.0</td>
-<td>3800.0</td>
-<td>female</td>
-<td>2007</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Adelie</td>
-<td>Torgersen</td>
-<td>40.3</td>
-<td>18.0</td>
-<td>195.0</td>
-<td>3250.0</td>
-<td>female</td>
-<td>2007</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
 </div>
 </section>
 <section id="define-model-and-fit" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="define-model-and-fit"><span class="header-section-number">2</span> Define Model and Fit</h2>
-<div class="cell" data-execution_count="3">
+<div id="db02447c" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> get_dummies(df[[<span class="st">'bill_length_mm'</span>, <span class="st">'species'</span>, <span class="st">'sex'</span>]], drop_first <span class="op">=</span> <span class="va">False</span>)</span>
@@ -228,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="get-some-information" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="get-some-information"><span class="header-section-number">3</span> Get some information</h2>
-<div class="cell" data-execution_count="4">
+<div id="f424eea2" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R^2 </span><span class="sc">{</span>model<span class="sc">.</span>score(X,y)<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -246,7 +187,7 @@ Coefficients [  32.53688677 -265.36728566 -564.13282013  829.50010579 -273.68346
   273.68346204]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div id="0d36d937" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># save the model</span></span>
@@ -261,13 +202,13 @@ Coefficients [  32.53688677 -265.36728566 -564.13282013  829.50010579 -273.68346
  with vetiver.model_card()
 Writing pin:
 Name: 'penguin_model'
-Version: 20240106T103111Z-5b870</code></pre>
+Version: 20240115T082216Z-5b870</code></pre>
 </div>
 </div>
 </section>
 <section id="create-api" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="create-api"><span class="header-section-number">4</span> Create API</h2>
-<div class="cell" data-execution_count="6">
+<div id="d084bcb2" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> board_folder(<span class="st">'data/model'</span>, allow_pickle_read<span class="op">=</span><span class="va">True</span>)</span>
