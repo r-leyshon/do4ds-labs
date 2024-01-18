@@ -1,4 +1,4 @@
-name: /Users/richardleyshon/Documents/do4ds-labs/conda-env
+name: ./conda-env
 channels:
   - defaults
 dependencies:
