@@ -1,5 +1,5 @@
 ---
-title: "Exploring Palmer Penguins"
+title: "Explore Palmer Penguins"
 author: "Rich Leyshon"
 date: today
 listing:
