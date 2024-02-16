@@ -271,4 +271,5 @@ rsconnect/
 
 /_*.local
 
-/docs/
+/docs/*
+!/docs/.gitkeep
