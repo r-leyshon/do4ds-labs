@@ -270,3 +270,5 @@ rsconnect/
 /.quarto/
 
 /_*.local
+
+/docs/
