@@ -2,8 +2,6 @@
 title: "Exploring Palmer Penguins"
 author: "Rich Leyshon"
 date: today
-resources:
-  - .nojekyll
 listing:
     id: main-listing
     type: default

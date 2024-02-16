@@ -21,3 +21,5 @@ format:
     css: /www/styles.css
     toc: true
     number-sections: true
+resources:
+  - .nojekyll
