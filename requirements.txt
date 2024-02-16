@@ -1,0 +1,8 @@
+duckdb
+palmerpenguins
+pandas
+pins
+requests
+shiny
+scikit-learn
+vetiver
