@@ -25,9 +25,10 @@ jobs:
         with:
           activate-environment: do4ds-env
   
-      - name: Install python deps
+      - name: Install deps
         run: |
           pip install jupyter
+          conda install nb_conda_kernels
           pip install -r requirements.txt
 
       - name: Install R
