@@ -3,11 +3,6 @@ title: "Model"
 format:
   html:
     code-fold: true
-jupyter: 
-  kernelspec:
-    name: "conda-env-do4ds-env-py"
-    language: "python"
-    display_name: "do4ds-env"
 ---
 
 
