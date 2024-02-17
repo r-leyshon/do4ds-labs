@@ -132,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="da7b0b0a" class="cell" data-execution_count="1">
+<div id="c568e3eb" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> penguins</span>
@@ -148,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="get-data" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="get-data"><span class="header-section-number">1</span> Get Data</h2>
-<div id="9e18a282" class="cell" data-execution_count="2">
+<div id="4f19b13c" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> duckdb.<span class="ex">connect</span>(<span class="st">"my-db.duckdb"</span>)</span>
@@ -159,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="define-model-and-fit" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="define-model-and-fit"><span class="header-section-number">2</span> Define Model and Fit</h2>
-<div id="445d44b3" class="cell" data-execution_count="4">
+<div id="a7984a31" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> get_dummies(df[[<span class="st">'bill_length_mm'</span>, <span class="st">'species'</span>, <span class="st">'sex'</span>]], drop_first <span class="op">=</span> <span class="va">False</span>)</span>
@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="get-some-information" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="get-some-information"><span class="header-section-number">3</span> Get some information</h2>
-<div id="556c88ba" class="cell" data-execution_count="5">
+<div id="7f4f7cdf" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R^2 </span><span class="sc">{</span>model<span class="sc">.</span>score(X,y)<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -192,7 +192,7 @@ Coefficients [  32.53688677 -265.36728566 -564.13282013  829.50010579 -273.68346
 </section>
 <section id="create-api" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="create-api"><span class="header-section-number">4</span> Create API</h2>
-<div id="90634141" class="cell" data-execution_count="7">
+<div id="0e82f5b0" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run this stage in CLI</span></span>
@@ -207,7 +207,7 @@ Coefficients [  32.53688677 -265.36728566 -564.13282013  829.50010579 -273.68346
 </section>
 <section id="query-api" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="query-api"><span class="header-section-number">5</span> Query API</h2>
-<div id="bc76b091" class="cell" data-execution_count="8">
+<div id="03c9703a" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># once app is running, execute cell</span></span>
