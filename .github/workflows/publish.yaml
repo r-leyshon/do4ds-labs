@@ -37,7 +37,7 @@ jobs:
         run: |
           conda init
           conda create -p ./do4ds-env python=3.9.18 -y
-          conda activate ./do4ds-env
+          conda activate /home/runner/work/do4ds-labs/do4ds-labs/do4ds-env
           pip install jupyter
           pip install -r requirements.txt
   
