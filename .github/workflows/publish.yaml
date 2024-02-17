@@ -23,14 +23,15 @@ jobs:
       - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v3.0.1
         with:
-          activate-environment: conda-env-do4ds-env-py
-
+          activate-environment: ./do4ds-env
+        run: |
+          conda install nb_conda_kernels
+          python -m nb_conda_kernels list
+  
       - name: Install python deps
         run: |
           pip install jupyter
           pip install -r requirements.txt
-          conda install nb_conda_kernels
-          python -m nb_conda_kernels list
 
       - name: Install R
         uses: r-lib/actions/setup-r@v2
