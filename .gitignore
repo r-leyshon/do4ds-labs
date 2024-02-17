@@ -1,6 +1,6 @@
 # manually-added files
 # py conda env
-conda-env/
+do4ds-env/
 # renv lint, going with minimal committed files, see https://rstudio.github.io/renv/articles/collaborating.html
 renv/
 .Rprofile

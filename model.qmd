@@ -5,9 +5,9 @@ format:
     code-fold: true
 jupyter: 
   kernelspec:
-    name: "conda-env-conda-env-2-py"
+    name: "conda-env-do4ds-env-py"
     language: "python"
-    display_name: "conda-env"
+    display_name: "do4ds-env"
 ---
 
 
