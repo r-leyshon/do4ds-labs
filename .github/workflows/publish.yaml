@@ -29,6 +29,8 @@ jobs:
         run: |
           pip install jupyter
           conda install nb_conda_kernels
+          confdir=$(jupyter --config-dir)|touch $confdir/jupyter_config.json
+          confdir=$(jupyter --config-dir)|echo -e "{\n  "CondaKernelSpecManager": {\n    "kernelspec_path": "--user"\n  }\n}" >> $confdir/jupyter_config.json
           pip install -r requirements.txt
 
       - name: Install R
@@ -48,6 +50,11 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.4.540
+
+      - name: check conda deps
+        run: |
+          quarto check jupyter
+          python -m nb_conda_kernels list
   
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
