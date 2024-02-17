@@ -23,7 +23,7 @@ jobs:
       - name: Setup Miniconda
         uses: conda-incubator/setup-miniconda@v3.0.1
         with:
-          activate-environment: ./do4ds-env
+          activate-environment: do4ds-env
   
       - name: Install python deps
         run: |
