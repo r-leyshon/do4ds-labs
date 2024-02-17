@@ -24,6 +24,8 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3.0.1
         with:
           activate-environment: ./do4ds-env
+
+      - name: Check conda envs
         run: |
           conda install nb_conda_kernels
           python -m nb_conda_kernels list
