@@ -33,6 +33,11 @@ jobs:
           python-version: '3.9.18'
           cache: 'pip'
 
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v3.0.1
+        with:
+          activate-environment: conda-env-do4ds-env-py
+
       - name: Install python deps
         run: |
           pip install jupyter
